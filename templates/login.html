@@ -1,0 +1,32 @@
+<a href="{{ url_for('index') }}">index<a/>
+<a href="{{ url_for('login') }}">login<a/>
+<a href="{{ url_for('logout') }}">logout<a/>
+<a href="/admin">Admin<a/>
+<form action="" method="post" accept-charset="utf-8">
+    <table>
+        <caption>login</caption>
+        <tbody>
+            <tr>
+                <td>username</td>
+                <td><input type="text" name="username" value="admin"></td>
+            </tr>
+            <tr>
+                <td>password</td>
+                <td><input type="password" name="password" value="123456"></td>
+            </tr>
+        </tbody>
+    </table>
+    <input type="submit" value="Submit" >
+</form>
+{{error}}
+
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}

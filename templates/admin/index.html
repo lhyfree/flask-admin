@@ -1,0 +1,8 @@
+{% extends 'admin/master.html' %}
+{% block body %}
+    hello
+    <a href="{{ url_for('login') }}">login<a/>
+
+<a href="{{ url_for('logout') }}">logout<a/>
+<a href="/admin">Admin<a/>
+{% endblock %}

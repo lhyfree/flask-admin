@@ -1,0 +1,19 @@
+<h3>index</h3>
+
+{% if  session.logged_in %}
+    hello,{{ session.username }}
+{% endif %}
+<br><br>
+<a href="{{ url_for('login') }}">login<a/>
+<a href="{{ url_for('logout') }}">logout<a/>
+<a href="/admin">Admin<a/>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
